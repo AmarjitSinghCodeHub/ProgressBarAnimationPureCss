@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #232323;
+  color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 10pt;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 8em;
+  color: #141414;
+  text-transform: uppercase;
+}
+
+.barContainer {
+  position: relative;
+  width: 800px;
+  height: 2px;
+  background-color: #141414;
+}
+
+.barContainer::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f40752;
+  animation: animateBar 3s infinite linear;
+}
+
+@keyframes animateBar {
+  0%, 20% {
+    transform: scale(0);
+    transform-origin: left;
+  }
+  40% {
+    transform: scale(1);
+    transform-origin: left;
+  }
+  40.0001%, 60% {
+    transform: scale(1);
+    transform-origin: right;
+  }
+  80%, 100% {
+    transform: scale(0);
+    transform-origin: right;
+  }
+}
+.barContainer::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  transform: translateY(-5px);
+  width: 10px;
+  height: 10px;
+  background-color: #f12b6a;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #e93c73, 0 0 10px #f3477e, 0 0 15px #eb7da0;
+  animation: animateBall 3s infinite linear;
+}
+
+@keyframes animateBall {
+  0%, 20% {
+    left: 0;
+    opacity: 1;
+  }
+  40% {
+    left: 800px;
+    opacity: 1;
+  }
+  60% {
+    left: 800px;
+    opacity: 0.5;
+  }
+  80% {
+    left: 800px;
+    opacity: 0;
+  }
+  100% {
+    left: 0;
+    opacity: 0;
+  }
+}/*# sourceMappingURL=styles.css.map */
